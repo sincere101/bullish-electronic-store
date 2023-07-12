@@ -20,7 +20,6 @@ public class AdminController {
     public ResponseEntity<Object> create(@RequestBody Product product) {
         productRepo.put(product.getId(), product);
         String msg = "Product " + product.getId() + " is created successfully";
-        System.out.println(productRepo);
         return new ResponseEntity<>(msg, HttpStatus.OK);
     }
 

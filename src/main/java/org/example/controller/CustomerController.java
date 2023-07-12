@@ -23,8 +23,6 @@ public class CustomerController {
 
     @RequestMapping(value = "/customer/{customerId}", method = RequestMethod.POST)
     public ResponseEntity<Object> add(@PathVariable("customerId") String customerId,@RequestBody Deal deal) {
-        System.out.println(admin.getProductRepo());
-        System.out.println(deal.getProductId());
         if (!admin.getProductRepo().containsKey(deal.getProductId())) {
             return new ResponseEntity<>("Product not found", HttpStatus.OK);
         }
